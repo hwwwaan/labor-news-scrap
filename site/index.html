@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>고용관계론 기사 스크랩</title>
+<meta name="description" content="고용관계론 1~9장과 닿는 노동 기사를 매일 아침 모읍니다.">
+<style>
+  :root {
+    --bg: #f7f6f2; --panel: #ffffff; --ink: #1d1d1b; --sub: #5f5e58; --faint: #8b8a83;
+    --line: #e3e1da; --accent: #1f5f8b; --accent-ink: #ffffff; --chip: #ecebe5; --hover: #f1f0ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161615; --panel: #1f1f1d; --ink: #ecebe6; --sub: #b0afa8; --faint: #85847d;
+      --line: #33332f; --accent: #6fb0de; --accent-ink: #10202c; --chip: #2a2a27; --hover: #262624;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    word-break: keep-all; overflow-wrap: anywhere;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  header h1 { font-size: 26px; line-height: 1.3; margin: 0 0 6px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--sub); }
+  .stamp { margin-top: 10px; font-size: 14px; color: var(--faint); }
+
+  .controls {
+    position: sticky; top: 0; z-index: 5; background: var(--bg);
+    padding: 16px 0 12px; margin-top: 18px; border-bottom: 1px solid var(--line);
+  }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .row + .row { margin-top: 10px; }
+  input[type=search] {
+    flex: 1 1 240px; min-width: 0; font: inherit; color: var(--ink); background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px;
+  }
+  input[type=search]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); }
+  .seg button { font: inherit; font-size: 14px; border: 0; background: none; color: var(--sub); padding: 7px 12px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button[aria-pressed=true] { background: var(--accent); color: var(--accent-ink); }
+  .chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: none; font: inherit; font-size: 14px; border: 1px solid transparent; background: var(--chip); color: var(--ink);
+    border-radius: 999px; padding: 5px 12px; cursor: pointer; white-space: nowrap;
+  }
+  .chip .n { color: var(--faint); margin-left: 4px; font-variant-numeric: tabular-nums; }
+  .chip[aria-pressed=true] { background: var(--accent); color: var(--accent-ink); }
+  .chip[aria-pressed=true] .n { color: inherit; opacity: .8; }
+  .chtitle { margin: 14px 0 0; font-size: 15px; color: var(--sub); min-height: 1.6em; }
+  .chtitle b { color: var(--ink); }
+
+  .day { margin-top: 26px; }
+  .day h2 { font-size: 14px; font-weight: 600; color: var(--faint); margin: 0 0 6px; letter-spacing: .02em; }
+  ul { list-style: none; margin: 0; padding: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+  li { padding: 12px 16px; }
+  li + li { border-top: 1px solid var(--line); }
+  li:hover { background: var(--hover); }
+  li a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  li a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .meta { margin-top: 4px; font-size: 13px; color: var(--faint); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+  .tag { font-size: 12px; font-weight: 600; border-radius: 4px; padding: 1px 6px; color: var(--tag-ink); background: var(--tag-bg); }
+  .tag i { font-style: normal; font-weight: 400; opacity: .85; margin-left: 4px; }
+  .more { display: block; margin: 24px auto 0; font: inherit; color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 8px; padding: 8px 18px; cursor: pointer; }
+  .empty, .loading { margin-top: 40px; text-align: center; color: var(--faint); }
+  footer { margin-top: 48px; font-size: 13px; color: var(--faint); border-top: 1px solid var(--line); padding-top: 16px; }
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 560px) {
+    .wrap { padding-top: 22px; }
+    header h1 { font-size: 22px; }
+    li { padding: 11px 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>고용관계론 기사 스크랩</h1>
+    <p>2026년 2학기 고용관계론 1~9장과 닿는 노동 기사를 매일 아침 모읍니다. 토론과제에 쓸 최근 기사를 고를 때 보세요.</p>
+    <div class="stamp" id="stamp">불러오는 중…</div>
+  </header>
+
+  <div class="controls">
+    <div class="row">
+      <input type="search" id="q" placeholder="제목·언론사 검색 (예: 하청, 최저임금)" autocomplete="off" aria-label="기사 검색">
+      <div class="seg" id="period" role="group" aria-label="기간">
+        <button data-p="3">3일</button><button data-p="7">7일</button><button data-p="30">30일</button><button data-p="0">전체</button>
+      </div>
+    </div>
+    <div class="row"><div class="chips" id="chips" role="group" aria-label="장 고르기"></div></div>
+    <p class="chtitle" id="chtitle"></p>
+  </div>
+
+  <main id="list"><p class="loading">기사 목록을 불러오는 중입니다.</p></main>
+
+  <footer>
+    <p>기사의 저작권은 각 언론사에 있습니다. 이 페이지는 제목과 원문 링크만 모으며, 본문은 원문 사이트에서 읽어 주세요.</p>
+    <p id="sources">출처: 매일노동뉴스·참여와혁신 RSS, 구글 뉴스 검색. 장 표시는 제목과 요약에 나온 낱말로 기계가 붙인 것이라 틀릴 수 있습니다.</p>
+  </footer>
+</div>
+
+<script>
+// 매일 갱신되는 목록은 깃허브 저장소에서 바로 읽는다(Netlify 를 다시 배포하지 않아도 된다).
+// 못 읽으면 배포할 때 같이 올라간 사본(articles.json)을 쓴다.
+const DATA_URLS = [
+  'https://raw.githubusercontent.com/hwwwaan/labor-news-scrap/main/site/articles.json',
+  'articles.json'
+];
+const PAGE = 150;
+const HUES = { 1: 205, 2: 25, 3: 145, 4: 340, 5: 265, 6: 5, 7: 45, 8: 185, 9: 225 };
+const dark = matchMedia('(prefers-color-scheme: dark)');
+const $ = (id) => document.getElementById(id);
+
+const state = { ch: 'all', p: 7, q: '', shown: PAGE };
+let DATA = null;
+
+function readHash() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  state.ch = h.get('ch') || 'all';
+  state.p = h.has('p') ? Number(h.get('p')) || 0 : 7;
+  state.q = h.get('q') || '';
+  state.shown = PAGE;
+}
+function writeHash() {
+  const h = new URLSearchParams();
+  if (state.ch !== 'all') h.set('ch', state.ch);
+  if (state.p !== 7) h.set('p', state.p);
+  if (state.q) h.set('q', state.q);
+  const s = h.toString();
+  history.replaceState(null, '', s ? '#' + s : location.pathname + location.search);
+}
+
+function tagStyle(ch) {
+  const hue = HUES[ch] ?? 0;
+  return dark.matches
+    ? `--tag-bg:hsl(${hue} 35% 24%);--tag-ink:hsl(${hue} 70% 82%)`
+    : `--tag-bg:hsl(${hue} 60% 93%);--tag-ink:hsl(${hue} 55% 30%)`;
+}
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+const DOW = ['일', '월', '화', '수', '목', '금', '토'];
+function dayLabel(iso) {
+  const d = new Date(iso);
+  return `${d.getMonth() + 1}월 ${d.getDate()}일 (${DOW[d.getDay()]})`;
+}
+function timeLabel(iso) {
+  const d = new Date(iso);
+  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+}
+
+function inPeriodAndQuery(a) {
+  if (state.p && Date.now() - new Date(a.date).getTime() > state.p * 864e5) return false;
+  if (state.q) {
+    const q = state.q.toLowerCase();
+    if (!a.title.toLowerCase().includes(q) && !a.outlet.toLowerCase().includes(q)) return false;
+  }
+  return true;
+}
+function inChapter(a) {
+  if (state.ch === 'all') return true;
+  if (state.ch === 'none') return a.tags.length === 0;
+  return a.tags.some((t) => String(t.ch) === state.ch);
+}
+
+function renderChips(base) {
+  const count = { all: base.length, none: 0 };
+  for (const a of base) {
+    if (!a.tags.length) count.none++;
+    for (const t of a.tags) count[t.ch] = (count[t.ch] || 0) + 1;
+  }
+  const items = [['all', '전체']].concat(DATA.chapters.map((c) => [String(c.num), `${c.num}장`]), [['none', '장 미분류']]);
+  $('chips').innerHTML = items.map(([k, label]) =>
+    `<button class="chip" data-ch="${k}" aria-pressed="${state.ch === k}">${label}<span class="n">${count[k] || 0}</span></button>`
+  ).join('');
+  const c = DATA.chapters.find((c) => String(c.num) === state.ch);
+  $('chtitle').innerHTML = c ? `<b>${c.num}장</b> ${esc(c.title)}`
+    : state.ch === 'none' ? '어느 장 낱말에도 걸리지 않은 노동 기사입니다.' : '';
+}
+
+function render() {
+  if (!DATA) return;
+  for (const b of $('period').querySelectorAll('button')) b.setAttribute('aria-pressed', Number(b.dataset.p) === state.p);
+  const base = DATA.articles.filter(inPeriodAndQuery);
+  renderChips(base);
+  const rows = base.filter(inChapter);
+  if (!rows.length) {
+    $('list').innerHTML = '<p class="empty">조건에 맞는 기사가 없습니다. 기간을 늘리거나 검색어를 바꿔 보세요.</p>';
+    return;
+  }
+  let html = '', day = '';
+  for (const a of rows.slice(0, state.shown)) {
+    const d = dayLabel(a.date);
+    if (d !== day) {
+      html += (day ? '</ul></section>' : '') + `<section class="day"><h2>${d}</h2><ul>`;
+      day = d;
+    }
+    const tags = a.tags.map((t) =>
+      `<span class="tag" style="${tagStyle(t.ch)}" title="걸린 말: ${esc(t.kw.join(', '))}">${t.ch}장<i>${esc(t.kw.slice(0, 2).join('·'))}</i></span>`
+    ).join('');
+    html += `<li><a href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>
+      <div class="meta"><span>${esc(a.outlet)} · ${timeLabel(a.date)}</span>${tags}</div></li>`;
+  }
+  html += '</ul></section>';
+  if (rows.length > state.shown) html += `<button class="more" id="more">${rows.length - state.shown}건 더 보기</button>`;
+  $('list').innerHTML = html;
+  const more = $('more');
+  if (more) more.onclick = () => { state.shown += PAGE; render(); };
+}
+
+async function load() {
+  for (const url of DATA_URLS) {
+    try {
+      const r = await fetch(url, { cache: 'no-cache' });
+      if (!r.ok) continue;
+      return await r.json();
+    } catch (e) { /* 다음 주소로 */ }
+  }
+  throw new Error('목록을 불러오지 못했습니다');
+}
+
+readHash();
+$('q').value = state.q;
+let timer;
+$('q').addEventListener('input', (e) => {
+  clearTimeout(timer);
+  timer = setTimeout(() => { state.q = e.target.value.trim(); state.shown = PAGE; writeHash(); render(); }, 150);
+});
+$('period').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  state.p = Number(b.dataset.p); state.shown = PAGE; writeHash(); render();
+});
+$('chips').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  state.ch = b.dataset.ch; state.shown = PAGE; writeHash(); render();
+});
+dark.addEventListener('change', render);
+window.addEventListener('hashchange', () => { readHash(); $('q').value = state.q; render(); });
+
+load().then((d) => {
+  DATA = d;
+  const u = new Date(d.updated);
+  $('stamp').textContent = `마지막 갱신 ${u.getMonth() + 1}월 ${u.getDate()}일 ${timeLabel(d.updated)} · 모은 기사 ${d.articles.length.toLocaleString()}건`;
+  render();
+}).catch(() => {
+  $('stamp').textContent = '';
+  $('list').innerHTML = '<p class="empty">기사 목록을 불러오지 못했습니다. 잠시 뒤 새로고침해 주세요.</p>';
+});
+</script>
+</body>
+</html>
